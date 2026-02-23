@@ -313,34 +313,6 @@
     </footer>
 
     <script>
-        // 1. CURSOR ENGINE
-        const cursor = document.getElementById('cursor');
-        const follower = document.getElementById('cursor-follower');
-        const hoverables = document.querySelectorAll('.hover-target');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            follower.animate({
-                left: e.clientX + 'px',
-                top: e.clientY + 'px'
-            }, { duration: 400, fill: "forwards" });
-        });
-
-        hoverables.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                follower.style.width = '70px';
-                follower.style.height = '70px';
-                follower.style.background = 'rgba(255,255,255,0.05)';
-            });
-            el.addEventListener('mouseleave', () => {
-                follower.style.width = '40px';
-                follower.style.height = '40px';
-                follower.style.background = 'transparent';
-            });
-        });
-
         // 2. SCROLL REVEAL ENGINE
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
@@ -390,6 +362,7 @@
     </script>
 </body>
 </html>
+
 
 
 
